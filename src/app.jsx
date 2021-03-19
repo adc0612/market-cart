@@ -1,10 +1,10 @@
 import React from 'react';
 import './app.css';
-import Product from './components/product';
+import Products from './components/products';
 
 function App() {
   return (
-    <Product></Product>
+    <Products></Products>
   );
 }
 
