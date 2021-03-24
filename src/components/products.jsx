@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import Product from './product';
 
 class Products extends Component {
-  handleIncrement = product => {
-    // props로 app.jsx에 전달
-    this.props.onIncrement(product);
-  };
+  // handleIncrement = product => {
+  //   // props로 app.jsx에 전달
+  //   this.props.onIncrement(product);
+  // };
 
-  handleDecrement = product => {
-    this.props.onDecrement(product);
-  };
+  // handleDecrement = product => {
+  //   this.props.onDecrement(product);
+  // };
 
-  handleDelete = product => {
-    this.props.onDelete(product);
-  };
+  // handleDelete = product => {
+  //   this.props.onDelete(product);
+  // };
 
   render() {
     return (
@@ -23,9 +23,9 @@ class Products extends Component {
           <Product
             key={product.id}
             product={product}
-            onIncrement={this.handleIncrement}
-            onDecrement={this.handleDecrement}
-            onDelete={this.handleDelete}
+            onIncrement={this.props.onIncrement}
+            onDecrement={this.props.onDecrement}
+            onDelete={this.props.onDelete}
           />
         ))}
       </ul>
