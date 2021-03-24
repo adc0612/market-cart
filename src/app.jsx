@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './app.css';
 import Products from './components/products';
+import Navbar from './components/navbar';
 
 class App extends Component {
   state = {
@@ -49,6 +50,10 @@ class App extends Component {
   render() {
     return (
       <>
+        {/* navbar는 totalCount를 props로 받을건데 item 중 count가 0이 아닌 item들만 골라서 새 배열에 넣고 length만 리턴한다. */}
+        <Navbar
+          totalCount={this.state.products.filter(item => item.count > 0).length}
+        ></Navbar>
         <Products
           products={this.state.products}
           onIncrement={this.handleIncrement}
