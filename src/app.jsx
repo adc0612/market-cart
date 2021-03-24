@@ -47,6 +47,14 @@ class App extends Component {
     this.setState({ products });
   };
 
+  handleAdd = name => {
+    const products = [
+      ...this.state.products,
+      { id: Date.now(), name, count: 0 },
+    ];
+    this.setState({ products });
+  };
+
   render() {
     return (
       <>
@@ -59,6 +67,7 @@ class App extends Component {
           onIncrement={this.handleIncrement}
           onDecrement={this.handleDecrement}
           onDelete={this.handleDelete}
+          onAdd={this.handleAdd}
         />
       </>
     );

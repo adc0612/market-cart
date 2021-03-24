@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Product from './product';
+import ProductAddFrom from './productAddForm';
 
 class Products extends Component {
   // handleIncrement = product => {
@@ -17,18 +18,21 @@ class Products extends Component {
 
   render() {
     return (
-      <ul>
-        {this.props.products.map(product => (
-          // Product의 컴포넌트에 product props로 전달
-          <Product
-            key={product.id}
-            product={product}
-            onIncrement={this.props.onIncrement}
-            onDecrement={this.props.onDecrement}
-            onDelete={this.props.onDelete}
-          />
-        ))}
-      </ul>
+      <>
+        <ProductAddFrom onAdd={this.props.onAdd}></ProductAddFrom>
+        <ul>
+          {this.props.products.map(product => (
+            // Product의 컴포넌트에 product props로 전달
+            <Product
+              key={product.id}
+              product={product}
+              onIncrement={this.props.onIncrement}
+              onDecrement={this.props.onDecrement}
+              onDelete={this.props.onDelete}
+            />
+          ))}
+        </ul>
+      </>
     );
   }
 }
